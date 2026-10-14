@@ -7,7 +7,7 @@
 
 Você abre o YouTube só para ver um vídeo rápido, e de repente já se passaram 40 minutos de Shorts e recomendações que você nem queria assistir.
 
-Esta extensão para Chrome ajuda a reduzir o uso impulsivo do YouTube.
+Esta extensão para Chrome e Firefox ajuda a reduzir o uso impulsivo do YouTube.
 
 Toda vez que você abre o YouTube, a extensão mostra uma frase de efeito e pergunta: **"Você realmente quer usar o YouTube agora?"**. Se a resposta for sim, você escolhe como quer usar:
 
@@ -51,6 +51,18 @@ git clone https://github.com/spoycrab/youtube-focus-extension.git
 | Opera | `opera://extensions` |
 
 
+### Firefox
+
+
+1. Abra `about:debugging#/runtime/this-firefox` na barra de endereços.
+2. Clique em **Carregar extensão temporária…** (*Load Temporary Add-on…*).
+3. Selecione o arquivo `manifest.json` dentro da pasta do projeto.
+
+Extensões temporárias são removidas quando o Firefox fecha. Para uma instalação permanente, a extensão precisa ser assinada pela Mozilla (via [addons.mozilla.org](https://addons.mozilla.org/developers/)) — ou use o Firefox Developer Edition/Nightly com `xpinstall.signatures.required` = `false` em `about:config`.
+
+Se o overlay não aparecer no YouTube, confira em `about:addons` → YouTube Focus → **Permissões** se o acesso a `youtube.com` está liberado.
+
+
 ## Configurações
 
 - **Modo Foco:** o tempo de inatividade, o intervalo dos lembretes, se o objetivo é pedido e quais itens esconder.
@@ -61,5 +73,6 @@ As configurações só podem ser alteradas sem sessão ativa e fora do bloqueio,
 
 ## To do:
   - Postar extenção na Chrome Web Store
+  - Publicar no addons.mozilla.org (Firefox)
   - Traduzir para outros idiomas
   - Gerar estatísticas básicas de uso (tempo assistido, número de visitas, categorias mais vistas etc.)

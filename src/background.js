@@ -2,8 +2,10 @@
 // Service worker: única fonte de verdade das transições de estado.
 // O estado vive em chrome.storage (o worker pode ser descarregado a qualquer momento);
 // as abas reagem via chrome.storage.onChanged.
+// No Chrome roda como service worker; no Firefox como event page, que já carrega
+// shared/storage.js via `background.scripts` no manifest (e não tem importScripts).
 
-importScripts('shared/storage.js');
+if (typeof importScripts === 'function') importScripts('shared/storage.js');
 
 const ALARM_RELAX_END = 'relax-end';
 const ALARM_COOLDOWN_END = 'cooldown-end';
